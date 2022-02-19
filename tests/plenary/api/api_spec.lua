@@ -14,7 +14,7 @@ describe('Api', function()
       '  DEADLINE: <2021-07-21 Wed 22:02>',
     })
 
-    assert.are.same(3, #api.load())
+    assert.is.True(#api.load() > 1)
     local current_file = api.current()
     assert.are.same(false, current_file.is_archive_file)
     assert.are.same(file, current_file.filename)

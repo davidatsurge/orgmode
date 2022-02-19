@@ -1,9 +1,11 @@
 local Files = require('orgmode.parser.files')
 local OrgFile = require('orgmode.api.file')
 
+local OrgApi = {}
+
 ---@param name? string|string[] specific file names to return (absolute path). If ommitted, returns all loaded files
 ---@return OrgFile|OrgFile[]
-local function load(name)
+function OrgApi.load(name)
   vim.validate({
     name = { name, { 'string', 'table' }, true },
   })
@@ -36,15 +38,12 @@ end
 
 ---Get current org buffer file
 ---@return OrgFile
-local function current()
+function OrgApi.current()
   if vim.bo.filetype ~= 'org' then
     error('Not an org buffer.')
   end
   local name = vim.api.nvim_buf_get_name(0)
-  return load(name)
+  return OrgApi.load(name)
 end
 
-return {
-  load = load,
-  current = current,
-}
+return OrgApi
