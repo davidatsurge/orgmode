@@ -1150,7 +1150,7 @@ Agenda view mapping: `I`<br />
 Start the clock by adding or updating the `:LOGBOOK:` drawer. Note that this clocks out any currently active clock.<br />
 Also, agenda/todo/search view highlights item that is clocked in.
 ##### Clock out
-Org file mapping: `<leader>oxi`<br />
+Org file mapping: `<leader>oxo`<br />
 Agenda view mapping: `O`<br />
 Clock out the entry and update the `:LOGBOOK:` drawer, and also add a total tracked time.<br />
 Note that in agenda view pressing `O` anywhere clocks the currently active entry, while in org file cursor must be in the headline subtree.
